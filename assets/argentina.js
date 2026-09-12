@@ -47,6 +47,7 @@
     }).join('');
 
     panel.innerHTML = '' +
+      '<div class="scene">' + window.atlasScene(r.id) + '</div>' +
       '<div class="mappanel__top">' +
         '<h3>' + r.name + '</h3>' +
         '<p>' + r.full + ' · industria principal: ' + r.primary + '</p>' +

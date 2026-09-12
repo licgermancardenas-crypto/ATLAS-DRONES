@@ -153,7 +153,7 @@ window.AERONEX = (function () {
       needs: 'Posicionamiento RTK o PPK, techo de servicio alto y repetibilidad mensual del mismo plan de vuelo.'
     },
     {
-      id: 'medir-acopios', name: 'Medir acopios', industry: 'mineria', regions: ['noa','puertos','litoral'],
+      id: 'medir-acopios', name: 'Medir acopios', industry: 'mineria', regions: ['noa','litoral','baires'],
       example: 'Pilas de mineral en Salta',
       profile: { areaHa: 60, lineKm: 0, rangeKm: 4, enduranceMin: 25, accuracyCm: 3, payloadKg: 0.8, sensors: ['rgb','rtk'], env: 'altura', regulatory: 'estandar' },
       needs: 'Precisión centimétrica para cálculo de volumen auditable y vuelo corto repetible.'
@@ -207,6 +207,12 @@ window.AERONEX = (function () {
       needs: 'Ala fija o VTOL por cobertura, precisión catastral y coordinación con espacio aéreo controlado.'
     },
     {
+      id: 'monitoreo-ambiental', name: 'Monitorear un área ambiental', industry: 'ambiental', regions: ['patagonia','litoral'],
+      example: 'Humedal del Delta o cuenca de un río patagónico',
+      profile: { areaHa: 900, lineKm: 0, rangeKm: 10, enduranceMin: 45, accuracyCm: 30, payloadKg: 0.8, sensors: ['multiespectral','rgb','termico'], env: 'humedo', regulatory: 'estandar' },
+      needs: 'Series comparables en el tiempo, sensor multiespectral para calidad de agua y vegetación, y equipo sellado para humedad.'
+    },
+    {
       id: 'inspeccionar-puerto', name: 'Inspeccionar un puerto', industry: 'puertos', regions: ['litoral','baires'],
       example: 'Terminal granaria del Gran Rosario',
       profile: { areaHa: 120, lineKm: 0, rangeKm: 5, enduranceMin: 35, accuracyCm: 5, payloadKg: 1.0, sensors: ['rgb','rtk','zoom'], env: 'urbano', regulatory: 'urbano' },
@@ -241,7 +247,7 @@ window.AERONEX = (function () {
       id: 'm350-rtk', brand: 'DJI', model: 'Matrice 350 RTK', category: 'Multirrotor pesado', tier: 'Industrial',
       precioUsd: 16500, enduranceMin: 55, rangeKm: 20, payloadKg: 2.7, ceilingM: 7000, windMs: 15, ip: 'IP55',
       sensors: ['rgb','zoom','termico','rtk','lidar'], accuracyCm: 3, coverageHaHora: 240,
-      industries: ['oil-gas','mineria','energia','inspeccion','geoespacial','ambiental'],
+      industries: ['oil-gas','mineria','energia','inspeccion','geoespacial','ambiental','logistica'],
       seller: { type: 'distribuidor', city: 'Neuquén' },
       costos: { payload: 9000, capacitacion: 1800, servicioAnual: 1600, baterias: 2600 },
       resumen: 'Plataforma industrial de carga intercambiable. Admite LiDAR, térmica radiométrica y zoom en la misma misión.',
@@ -316,6 +322,136 @@ window.AERONEX = (function () {
       costos: { payload: 0, capacitacion: 1000, servicioAnual: 900, baterias: 1300 },
       resumen: 'Versión térmica del Matrice 4, con zoom largo y reflector. Pensada para inspección nocturna y búsqueda.',
       argentina: 'Muy requerido en parques solares del NOA y en control de infraestructura eléctrica.'
+    },
+    {
+      id: 'm3e', brand: 'DJI', model: 'Mavic 3 Enterprise', category: 'Multirrotor liviano', tier: 'Mapeo liviano',
+      precioUsd: 5200, enduranceMin: 45, rangeKm: 15, payloadKg: 0.1, ceilingM: 6000, windMs: 12, ip: 'IP43',
+      sensors: ['rgb','zoom','rtk'], accuracyCm: 3, coverageHaHora: 200,
+      industries: ['construccion','geoespacial','inmobiliario','gobierno','agro'],
+      seller: { type: 'dealer', city: 'Rosario' },
+      costos: { payload: 0, capacitacion: 600, servicioAnual: 450, baterias: 850 },
+      resumen: 'Cámara de 20 MP con obturador mecánico y RTK opcional en un equipo que entra en una mochila. Mapea con precisión topográfica sin flota ni cuadrilla.',
+      argentina: 'El primer equipo profesional de la mayoría de los estudios de agrimensura y las constructoras medianas del país.'
+    },
+    {
+      id: 'm3t', brand: 'DJI', model: 'Mavic 3 Thermal', category: 'Multirrotor liviano', tier: 'Térmico liviano',
+      precioUsd: 6300, enduranceMin: 45, rangeKm: 15, payloadKg: 0.1, ceilingM: 6000, windMs: 12, ip: 'IP43',
+      sensors: ['termico','zoom','rgb'], accuracyCm: 10, coverageHaHora: 150,
+      industries: ['seguridad','inspeccion','ambiental','energia','ganaderia'],
+      seller: { type: 'dealer', city: 'Córdoba' },
+      costos: { payload: 0, capacitacion: 700, servicioAnual: 500, baterias: 850 },
+      resumen: 'Térmica radiométrica de 640 por 512 y zoom de 56 aumentos en formato plegable. Resuelve el 80 % de la inspección liviana a un tercio del costo industrial.',
+      argentina: 'Entrada habitual de bomberos voluntarios, cooperativas eléctricas y productores ganaderos al vuelo térmico.'
+    },
+    {
+      id: 'm30t', brand: 'DJI', model: 'Matrice 30T', category: 'Multirrotor', tier: 'Industrial compacto',
+      precioUsd: 14500, enduranceMin: 41, rangeKm: 15, payloadKg: 0.2, ceilingM: 7000, windMs: 15, ip: 'IP55',
+      sensors: ['termico','zoom','rgb','rtk'], accuracyCm: 5, coverageHaHora: 170,
+      industries: ['seguridad','inspeccion','oil-gas','energia','gobierno','ambiental'],
+      seller: { type: 'distribuidor', city: 'Neuquén' },
+      costos: { payload: 0, capacitacion: 1400, servicioAnual: 1200, baterias: 2100 },
+      resumen: 'Sensores industriales sellados en un cuerpo plegable. Aguanta lluvia y ráfaga con el rendimiento de una plataforma de carga, sin el volumen de una.',
+      argentina: 'Plataforma preferida de brigadas de emergencia y de inspección de líneas en la Norpatagonia.'
+    },
+    {
+      id: 'm4d-dock', brand: 'DJI', model: 'Matrice 4D + Dock 3', category: 'Dron en caja', tier: 'Operación desatendida',
+      precioUsd: 38000, enduranceMin: 54, rangeKm: 25, payloadKg: 0.5, ceilingM: 6000, windMs: 12, ip: 'IP55',
+      sensors: ['rgb','zoom','termico','rtk'], accuracyCm: 3, coverageHaHora: 210,
+      industries: ['oil-gas','energia','inspeccion','puertos','seguridad','mineria','gobierno'],
+      seller: { type: 'distribuidor', city: 'Neuquén' },
+      costos: { payload: 0, capacitacion: 3200, servicioAnual: 4800, baterias: 0 },
+      resumen: 'Aeronave y hangar automático en un solo producto. Despega según cronograma, vuela la ruta guardada y vuelve a cargar sin nadie en el sitio.',
+      argentina: 'La apuesta de los yacimientos y las terminales portuarias que necesitan la misma pasada todos los días sin mover una cuadrilla.'
+    },
+    {
+      id: 'skydio-x10', brand: 'Skydio', model: 'X10', category: 'Multirrotor', tier: 'Inspección autónoma',
+      precioUsd: 19000, enduranceMin: 40, rangeKm: 12, payloadKg: 0.3, ceilingM: 5000, windMs: 13, ip: 'IP54',
+      sensors: ['rgb','termico','zoom'], accuracyCm: 5, coverageHaHora: 120,
+      industries: ['seguridad','inspeccion','energia','gobierno','construccion'],
+      seller: { type: 'importador', city: 'Buenos Aires' },
+      costos: { payload: 0, capacitacion: 2600, servicioAnual: 2000, baterias: 1600 },
+      resumen: 'Vuela solo entre estructuras usando visión en seis direcciones. El piloto elige qué inspeccionar, no cómo esquivar.',
+      argentina: 'Alternativa de origen estadounidense para organismos con restricciones de proveedor. Soporte por importador único.'
+    },
+    {
+      id: 'anafi-ai', brand: 'Parrot', model: 'ANAFI Ai', category: 'Multirrotor liviano', tier: 'Fotogrametría 4G',
+      precioUsd: 9500, enduranceMin: 32, rangeKm: 8, payloadKg: 0.2, ceilingM: 5000, windMs: 12, ip: 'IP53',
+      sensors: ['rgb','rtk'], accuracyCm: 3, coverageHaHora: 110,
+      industries: ['geoespacial','construccion','gobierno','inspeccion'],
+      seller: { type: 'importador', city: 'Buenos Aires' },
+      costos: { payload: 0, capacitacion: 1100, servicioAnual: 700, baterias: 900 },
+      resumen: 'Enlace 4G en lugar de radio: el alcance lo define la cobertura celular, no la antena. Fotogrametría con software abierto y datos propios.',
+      argentina: 'Encaja donde hay señal y hace falta trazabilidad del dato: catastro municipal y obra pública.'
+    },
+    {
+      id: 'trinity-pro', brand: 'Quantum Systems', model: 'Trinity Pro', category: 'VTOL ala fija', tier: 'Cobertura extendida',
+      precioUsd: 29000, enduranceMin: 90, rangeKm: 10, payloadKg: 0.7, ceilingM: 4500, windMs: 13, ip: 'IP43',
+      sensors: ['rgb','multiespectral','rtk','termico'], accuracyCm: 2, coverageHaHora: 750,
+      industries: ['agro','geoespacial','gobierno','mineria','forestal','ambiental'],
+      seller: { type: 'distribuidor', city: 'Córdoba' },
+      costos: { payload: 5200, capacitacion: 2400, servicioAnual: 2000, baterias: 1500 },
+      resumen: 'Hora y media de vuelo con despegue vertical y payload intercambiable. Cubre miles de hectáreas por jornada sin necesitar pista.',
+      argentina: 'Competidor directo de Wingtra en campaña agrícola extensiva y relevamiento minero del NOA.'
+    },
+    {
+      id: 'agras-t25', brand: 'DJI', model: 'Agras T25', category: 'Multirrotor agrícola', tier: 'Aplicación',
+      precioUsd: 16000, enduranceMin: 15, rangeKm: 4, payloadKg: 20, ceilingM: 4500, windMs: 10, ip: 'IP67',
+      sensors: ['pulverizacion','rgb','rtk'], accuracyCm: 10, coverageHaHora: 12,
+      industries: ['agro','forestal','ganaderia'],
+      seller: { type: 'dealer', city: 'Entre Ríos' },
+      costos: { payload: 0, capacitacion: 1600, servicioAnual: 1500, baterias: 3200 },
+      resumen: 'Tanque de 20 litros y peso de despegue que una sola persona maneja. La escala chica de la aplicación aérea.',
+      argentina: 'Pensado para contratistas que arrancan y para lotes de menos de 200 hectáreas donde el T50 no se amortiza.'
+    },
+    {
+      id: 'p100pro', brand: 'XAG', model: 'P100 Pro', category: 'Multirrotor agrícola', tier: 'Aplicación',
+      precioUsd: 21000, enduranceMin: 15, rangeKm: 4, payloadKg: 50, ceilingM: 4000, windMs: 10, ip: 'IP67',
+      sensors: ['pulverizacion','rgb','rtk'], accuracyCm: 10, coverageHaHora: 18,
+      industries: ['agro','forestal'],
+      seller: { type: 'distribuidor', city: 'Santa Fe' },
+      costos: { payload: 0, capacitacion: 1800, servicioAnual: 1900, baterias: 4200 },
+      resumen: 'Cincuenta kilos de carga entre pulverización y esparcido de sólidos. Cambia el tanque por la tolva y siembra cobertura.',
+      argentina: 'Segunda marca de aplicación con red propia en la zona núcleo. Repuestos y baterías fuera del circuito DJI.'
+    },
+    {
+      id: 'flycart30', brand: 'DJI', model: 'FlyCart 30', category: 'Multirrotor de carga', tier: 'Logística aérea',
+      precioUsd: 23000, enduranceMin: 18, rangeKm: 16, payloadKg: 30, ceilingM: 6000, windMs: 12, ip: 'IP55',
+      sensors: ['rgb'], accuracyCm: 50, coverageHaHora: 0,
+      industries: ['logistica','oil-gas','mineria','energia'],
+      seller: { type: 'importador', city: 'Buenos Aires' },
+      costos: { payload: 0, capacitacion: 2000, servicioAnual: 2200, baterias: 3400 },
+      resumen: 'Treinta kilos de carga por cabrestante o por bodega. No releva ni inspecciona: mueve repuestos, muestras y herramienta.',
+      argentina: 'Caso claro en yacimientos y minas donde el camión tarda tres horas en un tramo que el aire resuelve en quince minutos.'
+    },
+    {
+      id: 'elios3', brand: 'Flyability', model: 'Elios 3', category: 'Multirrotor confinado', tier: 'Espacio confinado',
+      precioUsd: 48000, enduranceMin: 12, rangeKm: 1, payloadKg: 0.4, ceilingM: 3000, windMs: 8, ip: 'IP44',
+      sensors: ['lidar','rgb','termico'], accuracyCm: 3, coverageHaHora: 5,
+      industries: ['inspeccion','puertos','oil-gas','mineria','energia'],
+      seller: { type: 'importador', city: 'Buenos Aires' },
+      costos: { payload: 7500, capacitacion: 4200, servicioAnual: 3600, baterias: 2200 },
+      resumen: 'Jaula esférica y LiDAR para volar donde no hay señal satelital ni margen de error: silos, tanques, chimeneas y galerías.',
+      argentina: 'Reemplaza andamio y parada de planta en refinerías, cementeras y terminales granarias del Gran Rosario.'
+    },
+    {
+      id: 'inspire3', brand: 'DJI', model: 'Inspire 3', category: 'Cinematográfico', tier: 'Cine y publicidad',
+      precioUsd: 17000, enduranceMin: 28, rangeKm: 15, payloadKg: 0.9, ceilingM: 5000, windMs: 12, ip: 'Sin sellado',
+      sensors: ['rgb','rtk'], accuracyCm: 3, coverageHaHora: 60,
+      industries: ['cine','inmobiliario','gobierno'],
+      seller: { type: 'dealer', city: 'Buenos Aires' },
+      costos: { payload: 3000, capacitacion: 1500, servicioAnual: 1400, baterias: 2800 },
+      resumen: 'Sensor full frame de 8K con lentes intercambiables y repetición de trayectoria al centímetro. La misma toma, cuadro por cuadro, todas las veces.',
+      argentina: 'Estándar de la producción publicitaria porteña y de los rodajes de ficción en Patagonia y Cuyo.'
+    },
+    {
+      id: 'alta-x', brand: 'Freefly', model: 'Alta X', category: 'Multirrotor pesado', tier: 'Carga cinematográfica',
+      precioUsd: 42000, enduranceMin: 25, rangeKm: 5, payloadKg: 16, ceilingM: 4500, windMs: 15, ip: 'IP43',
+      sensors: ['rgb'], accuracyCm: 50, coverageHaHora: 30,
+      industries: ['cine','energia','construccion','geoespacial'],
+      seller: { type: 'importador', city: 'Buenos Aires' },
+      costos: { payload: 0, capacitacion: 2800, servicioAnual: 2600, baterias: 4600 },
+      resumen: 'Levanta dieciséis kilos: cámara de cine con óptica pesada, o el sensor científico que no entra en ninguna otra plataforma.',
+      argentina: 'Se alquila más de lo que se compra. Productoras grandes y relevamientos con LiDAR de porte lo contratan por jornada.'
     }
   ];
 

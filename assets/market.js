@@ -25,12 +25,21 @@
     return '<svg viewBox="0 0 64 64" aria-hidden="true"><rect x="24" y="26" width="16" height="12" rx="3"/><path d="M24 28L12 16M40 28l12-12M24 36L12 48M40 36l12 12"/><circle cx="12" cy="16" r="6"/><circle cx="52" cy="16" r="6"/><circle cx="12" cy="48" r="6"/><circle cx="52" cy="48" r="6"/><circle cx="32" cy="41" r="3"/></svg>';
   }
 
+  /* Fotografía del equipo si el dato la declara. Si el archivo no está o no
+     carga, se quita la imagen y vuelve a verse la silueta vectorial. */
+  function foto(ac) {
+    if (!ac.foto) return '';
+    return '<img src="img/' + ac.foto + '" alt="' + ac.brand + ' ' + ac.model + '" ' +
+      'loading="lazy" decoding="async" ' +
+      'onerror="var v=this.parentNode;this.remove();v.classList.remove(\'has-foto\')">';
+  }
+
   function card(ac) {
     var tipo = A.sellerType(ac.seller.type);
     var sensores = ac.sensors.slice(0, 3).map(function (s) { return A.SENSOR_LABEL[s]; }).join(' · ');
     return '' +
       '<article class="gear reveal">' +
-        '<div class="gear__vis">' + silhouette(ac.category) +
+        '<div class="gear__vis' + (ac.foto ? ' has-foto' : '') + '">' + silhouette(ac.category) + foto(ac) +
           '<span class="gear__tier">' + ac.tier + '</span>' +
           '<span class="gear__seller">' + tipo.label + '</span>' +
         '</div>' +

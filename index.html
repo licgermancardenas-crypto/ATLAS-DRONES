@@ -6,15 +6,52 @@
 <title>ATLAS DRONES · Marketplace e inteligencia de drones profesionales en Argentina</title>
 <meta name="description" content="La plataforma argentina para descubrir, comparar, configurar y adquirir drones profesionales e industriales. Agro, petróleo y gas, minería, energía, construcción y más.">
 <meta name="theme-color" content="#07080a">
-<meta property="og:title" content="ATLAS DRONES · plataforma AERONEX">
-<meta property="og:description" content="Marketplace e inteligencia de drones profesionales para la industria argentina.">
+<link rel="canonical" href="https://atlasdrones.com.ar/">
+<meta property="og:site_name" content="ATLAS DRONES">
+<meta property="og:title" content="ATLAS DRONES · Marketplace e inteligencia de drones en Argentina">
+<meta property="og:description" content="La plataforma argentina para descubrir, comparar, configurar y adquirir drones profesionales e industriales. Agro, petróleo y gas, minería, energía, construcción y más.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://atlasdrones.com.ar/">
+<meta property="og:image" content="https://atlasdrones.com.ar/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ATLAS DRONES, plataforma AERONEX: mapa de Argentina por región operativa.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ATLAS DRONES · Marketplace e inteligencia de drones en Argentina">
+<meta name="twitter:description" content="La plataforma argentina para descubrir, comparar, configurar y adquirir drones profesionales e industriales. Agro, petróleo y gas, minería, energía, construcción y más.">
+<meta name="twitter:image" content="https://atlasdrones.com.ar/img/og.png">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://atlasdrones.com.ar/#organizacion",
+      "name": "ATLAS DRONES",
+      "alternateName": "Plataforma AERONEX",
+      "url": "https://atlasdrones.com.ar/",
+      "logo": "https://atlasdrones.com.ar/img/og.png",
+      "description": "Marketplace e inteligencia de drones profesionales e industriales para Argentina.",
+      "areaServed": { "@type": "Country", "name": "Argentina" },
+      "knowsLanguage": "es-AR"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://atlasdrones.com.ar/#sitio",
+      "url": "https://atlasdrones.com.ar/",
+      "name": "ATLAS DRONES",
+      "inLanguage": "es-AR",
+      "publisher": { "@id": "https://atlasdrones.com.ar/#organizacion" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -66,9 +103,10 @@
           <a class="btn btn--ghost" href="argentina.html">Argentina desde el aire</a>
         </div>
         <div class="hero__meta">
-          <div><strong>16</strong><span>Industrias</span></div>
-          <div><strong>6</strong><span>Regiones operativas</span></div>
-          <div><strong>13</strong><span>Misiones tipo</span></div>
+          <div><strong data-hero="aeronaves">&mdash;</strong><span>Aeronaves</span></div>
+          <div><strong data-hero="industrias">&mdash;</strong><span>Industrias</span></div>
+          <div><strong data-hero="regiones">&mdash;</strong><span>Regiones operativas</span></div>
+          <div><strong data-hero="misiones">&mdash;</strong><span>Misiones tipo</span></div>
           <div><strong>ARS/USD</strong><span>Precios locales</span></div>
         </div>
       </div>
@@ -302,6 +340,7 @@
 <script src="assets/data.js"></script>
 <script src="assets/geo-argentina.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/scenery.js"></script>
 <script>
 /* Contenido de la portada generado desde el modelo de datos. */
 (function () {
@@ -321,6 +360,15 @@
     }, 2200);
   }
 
+  /* contadores del encabezado, leidos del modelo y no escritos a mano */
+  var CONTEO = {
+    aeronaves: A.AIRCRAFT.length, industrias: A.INDUSTRIES.length,
+    regiones: A.REGIONS.length, misiones: A.MISSIONS.length
+  };
+  Array.prototype.forEach.call(document.querySelectorAll('[data-hero]'), function (n) {
+    n.textContent = CONTEO[n.getAttribute('data-hero')];
+  });
+
   /* tira de industrias, duplicada para que el desplazamiento sea continuo */
   var nombres = A.INDUSTRIES.map(function (x) { return x.name; });
   document.getElementById('ticker').innerHTML =
@@ -328,12 +376,15 @@
 
   /* tarjetas de región */
   document.getElementById('regionCards').innerHTML = A.REGIONS.map(function (r) {
-    return '<a class="card reveal" href="argentina.html?region=' + r.id + '">' +
-      '<span class="card__num">' + r.name + '</span>' +
-      '<h3>' + r.primary + '</h3>' +
-      '<p>' + r.note + '</p>' +
-      '<div class="chips" style="margin-top:16px"><span class="chip chip--sol">' + r.landmark + '</span>' +
-      '<span class="chip">' + r.provinces.length + ' provincias</span></div>' +
+    return '<a class="card card--scene reveal" href="argentina.html?region=' + r.id + '">' +
+      '<div class="scene">' + window.atlasScene(r.id) + '</div>' +
+      '<div class="card__body">' +
+        '<span class="card__num">' + r.name + '</span>' +
+        '<h3>' + r.primary + '</h3>' +
+        '<p>' + r.note + '</p>' +
+        '<div class="chips" style="margin-top:16px"><span class="chip chip--sol">' + r.landmark + '</span>' +
+        '<span class="chip">' + r.provinces.length + ' provincias</span></div>' +
+      '</div>' +
     '</a>';
   }).join('');
 

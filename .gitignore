@@ -1,4 +1,7 @@
-# Archivos locales no versionados
+# Imágenes sueltas de trabajo, fuera del sitio
 *.jpg
 *.jpeg
 *.png
+
+# La carpeta del sitio sí se versiona
+!img/**
