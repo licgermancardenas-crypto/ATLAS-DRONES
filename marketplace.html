@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketplace de drones profesionales · ATLAS DRONES</title>
+<meta name="description" content="Catálogo de drones profesionales e industriales disponibles en Argentina, con precios de referencia en pesos y dólares.">
+<meta name="theme-color" content="#07080a">
+<meta property="og:title" content="ATLAS DRONES · plataforma AERONEX">
+<meta property="og:description" content="Marketplace e inteligencia de drones profesionales para la industria argentina.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="index.html" aria-label="ATLAS DRONES, inicio">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".35"/>
+        <circle cx="16" cy="16" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+        <path d="M16 1.5v6M16 24.5v6M1.5 16h6M24.5 16h6" stroke="currentColor" stroke-width="1.3"/>
+        <circle cx="16" cy="16" r="2.2" fill="currentColor"/>
+      </svg>
+      <span>
+        <span class="brand__text">ATLAS<span> DRONES</span></span>
+        <span class="brand__sub">PLATAFORMA AERONEX</span>
+      </span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Navegación principal">
+      <a href="argentina.html" class="nav__ar">ARGENTINA</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="configurador.html">Configurador</a>
+      <a href="index.html#industrias">Industrias</a>
+      <a href="index.html#misiones">Misiones</a>
+      <a href="#" class="btn btn--sm" data-quote="Consulta general">Cotizar</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section" style="padding-block:clamp(40px,6vw,72px) 34px">
+    <div class="container">
+      <header class="section__head reveal">
+        <p class="eyebrow">Marketplace</p>
+        <h2>Equipos profesionales disponibles en Argentina</h2>
+        <p>
+          Filtrá por industria, plataforma o tipo de vendedor. Los valores son de referencia
+          para dimensionar la inversión: la operación se cierra con cotización formal.
+        </p>
+      </header>
+
+      <div class="disclaimer reveal">
+        <b>Precios de referencia.</b>
+        <span>Corresponden al equipo base sin payload ni accesorios, y se muestran en pesos usando una cotización de referencia. Confirmá el valor vigente con el importador antes de decidir.</span>
+      </div>
+
+      <div class="shopbar reveal">
+        <div class="filters">
+          <div class="select"><select id="fIndustria" aria-label="Filtrar por industria"><option value="">Todas las industrias</option></select></div>
+          <div class="select"><select id="fCategoria" aria-label="Filtrar por plataforma"><option value="">Toda plataforma</option></select></div>
+          <div class="select"><select id="fVendedor" aria-label="Filtrar por vendedor"><option value="">Todo vendedor</option></select></div>
+          <div class="select"><select id="fOrden" aria-label="Ordenar"><option value="">Orden sugerido</option><option value="precio">Menor precio</option><option value="autonomia">Mayor autonomía</option><option value="cobertura">Mayor cobertura</option></select></div>
+        </div>
+        <div class="fx">
+          <span class="mono" id="shopCount" style="color:var(--tx-3)"></span>
+          <div class="toggle" role="group" aria-label="Moneda">
+            <button type="button" data-cur="USD">USD</button>
+            <button type="button" data-cur="ARS">ARS</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid--3" id="shopGrid"></div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <header class="section__head reveal">
+        <p class="eyebrow">Cómo se compra</p>
+        <h2>Del interés a la aeronave operativa</h2>
+      </header>
+      <ol class="steps">
+        <li class="reveal"><span class="steps__num">01</span><h3>Definir la misión</h3><p>Industria, región, superficie o traza y producto final esperado.</p></li>
+        <li class="reveal"><span class="steps__num">02</span><h3>Configurar el equipo</h3><p>Aeronave, payload, baterías, software de procesamiento y repuestos críticos.</p></li>
+        <li class="reveal"><span class="steps__num">03</span><h3>Cotizar y nacionalizar</h3><p>Precio formal, plazo de entrega, garantía y factura del importador o dealer.</p></li>
+        <li class="reveal"><span class="steps__num">04</span><h3>Operar en regla</h3><p>Registro del equipo, licencia de piloto, seguro y protocolo de vuelo ante ANAC.</p></li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".35"/>
+            <circle cx="16" cy="16" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+            <circle cx="16" cy="16" r="2.2" fill="currentColor"/>
+          </svg>
+          <span><span class="brand__text">ATLAS<span> DRONES</span></span></span>
+        </a>
+        <p>Marketplace e inteligencia de drones profesionales e industriales para Argentina y América Latina. Plataforma AERONEX.</p>
+      </div>
+      <div>
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="argentina.html">Argentina desde el aire</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+          <li><a href="configurador.html">Configurador de misión</a></li>
+          <li><a href="index.html#misiones">Plantillas de misión</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Industrias</h4>
+        <ul>
+          <li><a href="marketplace.html?industria=agro">Agricultura</a></li>
+          <li><a href="marketplace.html?industria=oil-gas">Petróleo y gas</a></li>
+          <li><a href="marketplace.html?industria=mineria">Minería</a></li>
+          <li><a href="marketplace.html?industria=construccion">Construcción</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:contacto@atlasdrones.com.ar">contacto@atlasdrones.com.ar</a></li>
+          <li><span>Buenos Aires, Argentina</span></li>
+          <li><button class="link" type="button" data-quote="Consulta general" style="background:none;border:0;padding:0;cursor:pointer">Solicitar cotización</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span data-year>2026</span> ATLAS DRONES · Plataforma AERONEX</p>
+      <p>Precios y especificaciones de referencia. Confirmar con el proveedor.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ------------------------------------------------------- modal cotización -->
+<div class="modal" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
+  <div class="modal__box">
+    <div class="modal__head">
+      <h3 id="quoteTitle">Solicitar cotización</h3>
+      <button class="modal__close" type="button" data-close aria-label="Cerrar">&times;</button>
+    </div>
+    <p class="modal__sub">Consulta sobre: <strong id="quoteContext" class="accent">Consulta general</strong></p>
+    <form data-mailto="contacto@atlasdrones.com.ar">
+      <input type="hidden" name="asunto" id="quoteSubject" value="Consulta general">
+      <div class="field"><label for="qNombre">Nombre y empresa</label><input id="qNombre" name="nombre" required placeholder="Nombre, razón social"></div>
+      <div class="field"><label for="qContacto">Correo o teléfono</label><input id="qContacto" name="contacto" required placeholder="Para responderte"></div>
+      <div class="field"><label for="qProvincia">Provincia de operación</label><input id="qProvincia" name="provincia" placeholder="Neuquén, Córdoba, Salta..."></div>
+      <div class="field"><label for="qMensaje">Misión y alcance</label><textarea id="qMensaje" name="mensaje" rows="4" required placeholder="Qué necesitás relevar, superficie o kilómetros, fecha estimada"></textarea></div>
+      <button class="btn btn--block" type="submit">Enviar consulta</button>
+      <p class="formnote"></p>
+    </form>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/market.js"></script>
+</body>
+</html>

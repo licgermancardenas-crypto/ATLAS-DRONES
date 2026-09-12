@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Argentina desde el aire · ATLAS DRONES</title>
+<meta name="description" content="Mapa interactivo de las seis regiones operativas argentinas: industrias, aplicaciones con drones, aeronaves y tipos de misión.">
+<meta name="theme-color" content="#07080a">
+<meta property="og:title" content="ATLAS DRONES · plataforma AERONEX">
+<meta property="og:description" content="Marketplace e inteligencia de drones profesionales para la industria argentina.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="index.html" aria-label="ATLAS DRONES, inicio">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".35"/>
+        <circle cx="16" cy="16" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+        <path d="M16 1.5v6M16 24.5v6M1.5 16h6M24.5 16h6" stroke="currentColor" stroke-width="1.3"/>
+        <circle cx="16" cy="16" r="2.2" fill="currentColor"/>
+      </svg>
+      <span>
+        <span class="brand__text">ATLAS<span> DRONES</span></span>
+        <span class="brand__sub">PLATAFORMA AERONEX</span>
+      </span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Navegación principal">
+      <a href="argentina.html" class="nav__ar">ARGENTINA</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="configurador.html">Configurador</a>
+      <a href="index.html#industrias">Industrias</a>
+      <a href="index.html#misiones">Misiones</a>
+      <a href="#" class="btn btn--sm" data-quote="Consulta general">Cotizar</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section" style="padding-block:clamp(40px,6vw,72px) 0">
+    <div class="container">
+      <header class="section__head reveal" style="margin-bottom:34px">
+        <p class="eyebrow">Argentina desde el aire</p>
+        <h2>El mapa operativo del país</h2>
+        <p>
+          Seis regiones, veinticuatro jurisdicciones y una lógica distinta en cada una.
+          Pasá el cursor sobre una región o elegila en la lista para ver qué se vuela ahí,
+          con qué equipo y bajo qué condiciones.
+        </p>
+      </header>
+      <div class="regiontabs reveal" id="regionTabs"></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:28px">
+    <div class="container">
+      <div class="mapwrap">
+        <div class="mapstage reveal" id="mapStage"></div>
+        <aside class="mappanel reveal" id="mapPanel" aria-live="polite"></aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <header class="section__head reveal">
+        <p class="eyebrow">Condiciones de vuelo</p>
+        <h2>Lo que el terreno le exige al equipo</h2>
+      </header>
+      <div class="grid grid--3">
+        <article class="card reveal"><h3>Altura</h3><p>En la Puna salteña y jujeña se trabaja entre 3.000 y 4.500 metros. El aire menos denso recorta empuje y autonomía, y deja afuera a los equipos con techo de servicio bajo.</p></article>
+        <article class="card reveal"><h3>Viento</h3><p>En la meseta patagónica el viento sostenido es la norma. La resistencia declarada en la ficha técnica define si la ventana de vuelo existe o no.</p></article>
+        <article class="card reveal"><h3>Humedad</h3><p>En el Litoral la humedad es constante y la lluvia interrumpe campañas. El sellado del equipo pesa más que la velocidad de crucero.</p></article>
+        <article class="card reveal"><h3>Distancia</h3><p>Entre locaciones de Vaca Muerta o lotes de la Pampa Húmeda hay decenas de kilómetros. Rinde la cobertura por vuelo, no la maniobrabilidad.</p></article>
+        <article class="card reveal"><h3>Espacio aéreo</h3><p>En el AMBA y en cabeceras urbanas la autorización ANAC y la coordinación con el aeródromo son parte del plan de misión, no un trámite posterior.</p></article>
+        <article class="card reveal"><h3>Soporte</h3><p>Un equipo sin repuestos en el país queda en tierra. La plataforma pondera dónde está el importador o el dealer que lo respalda.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="text-align:center;max-width:700px">
+      <h2 class="reveal" style="font-size:clamp(26px,4vw,40px);margin-bottom:16px">¿Operás en alguna de estas regiones?</h2>
+      <p class="lead reveal" style="margin:0 auto 26px">Configurá la misión y te decimos qué aeronave la resuelve, con cuánto presupuesto y con qué proveedor.</p>
+      <div class="reveal"><a class="btn" href="configurador.html">Abrir el configurador</a></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".35"/>
+            <circle cx="16" cy="16" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+            <circle cx="16" cy="16" r="2.2" fill="currentColor"/>
+          </svg>
+          <span><span class="brand__text">ATLAS<span> DRONES</span></span></span>
+        </a>
+        <p>Marketplace e inteligencia de drones profesionales e industriales para Argentina y América Latina. Plataforma AERONEX.</p>
+      </div>
+      <div>
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="argentina.html">Argentina desde el aire</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+          <li><a href="configurador.html">Configurador de misión</a></li>
+          <li><a href="index.html#misiones">Plantillas de misión</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Industrias</h4>
+        <ul>
+          <li><a href="marketplace.html?industria=agro">Agricultura</a></li>
+          <li><a href="marketplace.html?industria=oil-gas">Petróleo y gas</a></li>
+          <li><a href="marketplace.html?industria=mineria">Minería</a></li>
+          <li><a href="marketplace.html?industria=construccion">Construcción</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:contacto@atlasdrones.com.ar">contacto@atlasdrones.com.ar</a></li>
+          <li><span>Buenos Aires, Argentina</span></li>
+          <li><button class="link" type="button" data-quote="Consulta general" style="background:none;border:0;padding:0;cursor:pointer">Solicitar cotización</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span data-year>2026</span> ATLAS DRONES · Plataforma AERONEX</p>
+      <p>Precios y especificaciones de referencia. Confirmar con el proveedor.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ------------------------------------------------------- modal cotización -->
+<div class="modal" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
+  <div class="modal__box">
+    <div class="modal__head">
+      <h3 id="quoteTitle">Solicitar cotización</h3>
+      <button class="modal__close" type="button" data-close aria-label="Cerrar">&times;</button>
+    </div>
+    <p class="modal__sub">Consulta sobre: <strong id="quoteContext" class="accent">Consulta general</strong></p>
+    <form data-mailto="contacto@atlasdrones.com.ar">
+      <input type="hidden" name="asunto" id="quoteSubject" value="Consulta general">
+      <div class="field"><label for="qNombre">Nombre y empresa</label><input id="qNombre" name="nombre" required placeholder="Nombre, razón social"></div>
+      <div class="field"><label for="qContacto">Correo o teléfono</label><input id="qContacto" name="contacto" required placeholder="Para responderte"></div>
+      <div class="field"><label for="qProvincia">Provincia de operación</label><input id="qProvincia" name="provincia" placeholder="Neuquén, Córdoba, Salta..."></div>
+      <div class="field"><label for="qMensaje">Misión y alcance</label><textarea id="qMensaje" name="mensaje" rows="4" required placeholder="Qué necesitás relevar, superficie o kilómetros, fecha estimada"></textarea></div>
+      <button class="btn btn--block" type="submit">Enviar consulta</button>
+      <p class="formnote"></p>
+    </form>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/geo-argentina.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/argentina.js"></script>
+</body>
+</html>

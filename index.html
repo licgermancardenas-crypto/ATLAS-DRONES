@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ATLAS DRONES · Marketplace e inteligencia de drones profesionales en Argentina</title>
+<meta name="description" content="La plataforma argentina para descubrir, comparar, configurar y adquirir drones profesionales e industriales. Agro, petróleo y gas, minería, energía, construcción y más.">
+<meta name="theme-color" content="#07080a">
+<meta property="og:title" content="ATLAS DRONES · plataforma AERONEX">
+<meta property="og:description" content="Marketplace e inteligencia de drones profesionales para la industria argentina.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="index.html" aria-label="ATLAS DRONES, inicio">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".35"/>
+        <circle cx="16" cy="16" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+        <path d="M16 1.5v6M16 24.5v6M1.5 16h6M24.5 16h6" stroke="currentColor" stroke-width="1.3"/>
+        <circle cx="16" cy="16" r="2.2" fill="currentColor"/>
+      </svg>
+      <span>
+        <span class="brand__text">ATLAS<span> DRONES</span></span>
+        <span class="brand__sub">PLATAFORMA AERONEX</span>
+      </span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Navegación principal">
+      <a href="argentina.html" class="nav__ar">ARGENTINA</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="configurador.html">Configurador</a>
+      <a href="#industrias">Industrias</a>
+      <a href="#misiones">Misiones</a>
+      <a href="#" class="btn btn--sm" data-quote="Consulta general">Cotizar</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ---------------------------------------------------------------- hero -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"><div class="hero__glow"></div></div>
+    <div class="container hero__inner">
+      <div>
+        <p class="eyebrow">Argentina · plataforma AERONEX</p>
+        <h1 class="hero__title">La aeronave correcta<em>para cada misión argentina</em></h1>
+        <p class="hero__lead">
+          No es una tienda de drones. Es el lugar donde las empresas argentinas descubren,
+          comparan, configuran y adquieren tecnología aérea profesional, con criterio de
+          misión y no de catálogo.
+        </p>
+        <div class="hero__actions">
+          <a class="btn" href="configurador.html">Configurar mi misión</a>
+          <a class="btn btn--ghost" href="argentina.html">Argentina desde el aire</a>
+        </div>
+        <div class="hero__meta">
+          <div><strong>16</strong><span>Industrias</span></div>
+          <div><strong>6</strong><span>Regiones operativas</span></div>
+          <div><strong>13</strong><span>Misiones tipo</span></div>
+          <div><strong>ARS/USD</strong><span>Precios locales</span></div>
+        </div>
+      </div>
+      <div class="hero__map" id="heroMap" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------- ticker -->
+  <div class="ticker" aria-hidden="true"><div class="ticker__track" id="ticker"></div></div>
+
+  <!-- --------------------------------------------------------- posicionamiento -->
+  <section class="section">
+    <div class="container">
+      <header class="section__head reveal">
+        <p class="eyebrow">Qué es esta plataforma</p>
+        <h2>Marketplace, inteligencia y configurador en un mismo lugar</h2>
+        <p>
+          Un dron industrial no se compra como un producto de góndola. Se elige por misión,
+          se configura con payload, se opera con licencia y se sostiene con servicio.
+          Esta plataforma acompaña las cuatro etapas.
+        </p>
+      </header>
+      <div class="grid grid--4">
+        <article class="card reveal">
+          <span class="card__num">01 / MARKETPLACE</span>
+          <h3>Oferta nacional</h3>
+          <p>Importadores, distribuidores, dealers autorizados, fabricantes y proveedores de servicio en un solo catálogo, con precio en pesos y en dólares.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__num">02 / INTELIGENCIA</span>
+          <h3>Datos de misión</h3>
+          <p>Autonomía, alcance, sensores, precisión y techo de servicio comparados contra lo que exige el trabajo real, no contra la ficha del fabricante.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__num">03 / CONFIGURADOR</span>
+          <h3>Recomendación</h3>
+          <p>Cargás la misión y la plataforma devuelve ajuste de misión, operabilidad en Argentina, valor industrial y costo total a tres años.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__num">04 / INDUSTRIA</span>
+          <h3>Vertical por sector</h3>
+          <p>Cada industria argentina tiene su propia taxonomía de misiones, equipos y proveedores. Agro no se resuelve como se resuelve Vaca Muerta.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------ argentina teaser -->
+  <section class="section section--alt" id="argentina">
+    <div class="container">
+      <div class="head-row section__head reveal" style="max-width:none">
+        <div style="max-width:640px">
+          <p class="eyebrow">Argentina desde el aire</p>
+          <h2>Cada región vuela distinto</h2>
+          <p>
+            La Puna exige techo de servicio. La Patagonia exige viento. El Litoral exige sellado.
+            La Pampa exige cobertura. El mapa no es decoración: define qué equipo sirve.
+          </p>
+        </div>
+        <a class="btn btn--ghost" href="argentina.html">Abrir el mapa completo</a>
+      </div>
+      <div class="grid grid--3" id="regionCards"></div>
+    </div>
+  </section>
+
+  <!-- --------------------------------------------------------- industrias -->
+  <section class="section" id="industrias">
+    <div class="container">
+      <header class="section__head reveal">
+        <p class="eyebrow">Taxonomía</p>
+        <h2>Las industrias que mueven al país</h2>
+        <p>Dieciséis verticales con misiones, equipos y proveedores propios. Elegí una para filtrar el catálogo.</p>
+      </header>
+      <div class="grid grid--4" id="industryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------ misiones -->
+  <section class="section section--alt" id="misiones">
+    <div class="container">
+      <header class="section__head reveal">
+        <p class="eyebrow">Plantillas de misión</p>
+        <h2>Decinos qué tenés que hacer</h2>
+        <p>Cada plantilla carga el perfil técnico que la misión exige y devuelve la aeronave adecuada.</p>
+      </header>
+      <div class="grid grid--3" id="missionGrid"></div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------- inteligencia -->
+  <section class="section">
+    <div class="container">
+      <header class="section__head reveal">
+        <p class="eyebrow">Inteligencia de misión</p>
+        <h2>Cuatro lecturas antes de comprar</h2>
+        <p>La plataforma no ordena por precio. Ordena por capacidad real de resolver la misión en territorio argentino.</p>
+      </header>
+      <div class="grid grid--4">
+        <article class="card reveal">
+          <h3>Ajuste a la misión</h3>
+          <p>Sensores, autonomía, alcance, precisión y carga útil contrastados contra el perfil exigido por el trabajo.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Operabilidad en Argentina</h3>
+          <p>Altura de la Puna, viento patagónico, humedad del Litoral, espacio aéreo del AMBA y soporte técnico local.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Valor industrial</h3>
+          <p>Hectáreas por jornada, versatilidad de sensores y cuántos frentes de trabajo cubre el mismo equipo.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Costo total a 3 años</h3>
+          <p>Equipo, payload, formación, baterías y servicio. El precio de lista nunca es el costo real.</p>
+        </article>
+      </div>
+      <div style="margin-top:32px" class="reveal">
+        <a class="btn" href="configurador.html">Probar el configurador</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- --------------------------------------------------------- vendedores -->
+  <section class="section section--alt">
+    <div class="container">
+      <header class="section__head reveal">
+        <p class="eyebrow">Marketplace</p>
+        <h2>Cotización antes que carrito</h2>
+        <p>
+          El equipo profesional se vende con configuración de payload, capacitación, seguro y servicio.
+          Por eso la plataforma prioriza la solicitud de cotización y modela cada tipo de vendedor.
+        </p>
+      </header>
+      <div class="grid grid--3" id="sellerGrid"></div>
+    </div>
+  </section>
+
+  <!-- --------------------------------------------------------------- latam -->
+  <section class="section">
+    <div class="container">
+      <header class="section__head reveal">
+        <p class="eyebrow eyebrow--sol">Expansión</p>
+        <h2>Argentina primero, la región después</h2>
+        <p>La arquitectura de datos ya contempla moneda, idioma y taxonomía por país. El foco comercial arranca en Argentina.</p>
+      </header>
+      <div class="latam reveal" id="latamGrid"></div>
+    </div>
+  </section>
+
+  <!-- ----------------------------------------------------------------- cta -->
+  <section class="section section--alt">
+    <div class="container" style="text-align:center;max-width:720px">
+      <h2 class="reveal" style="font-size:clamp(28px,4.4vw,44px);margin-bottom:18px">¿Arrancamos por tu operación?</h2>
+      <p class="lead reveal" style="margin:0 auto 28px">
+        Contanos la industria, la región y el trabajo. Te devolvemos configuración sugerida,
+        proveedor y presupuesto de referencia.
+      </p>
+      <div class="reveal"><button class="btn" type="button" data-quote="Consulta general desde la portada">Solicitar cotización</button></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".35"/>
+            <circle cx="16" cy="16" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+            <circle cx="16" cy="16" r="2.2" fill="currentColor"/>
+          </svg>
+          <span><span class="brand__text">ATLAS<span> DRONES</span></span></span>
+        </a>
+        <p>Marketplace e inteligencia de drones profesionales e industriales para Argentina y América Latina. Plataforma AERONEX.</p>
+      </div>
+      <div>
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="argentina.html">Argentina desde el aire</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+          <li><a href="configurador.html">Configurador de misión</a></li>
+          <li><a href="index.html#misiones">Plantillas de misión</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Industrias</h4>
+        <ul>
+          <li><a href="marketplace.html?industria=agro">Agricultura</a></li>
+          <li><a href="marketplace.html?industria=oil-gas">Petróleo y gas</a></li>
+          <li><a href="marketplace.html?industria=mineria">Minería</a></li>
+          <li><a href="marketplace.html?industria=construccion">Construcción</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:contacto@atlasdrones.com.ar">contacto@atlasdrones.com.ar</a></li>
+          <li><span>Buenos Aires, Argentina</span></li>
+          <li><button class="link" type="button" data-quote="Consulta general" style="background:none;border:0;padding:0;cursor:pointer">Solicitar cotización</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span data-year>2026</span> ATLAS DRONES · Plataforma AERONEX</p>
+      <p>Precios y especificaciones de referencia. Confirmar con el proveedor.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ------------------------------------------------------- modal cotización -->
+<div class="modal" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
+  <div class="modal__box">
+    <div class="modal__head">
+      <h3 id="quoteTitle">Solicitar cotización</h3>
+      <button class="modal__close" type="button" data-close aria-label="Cerrar">&times;</button>
+    </div>
+    <p class="modal__sub">Consulta sobre: <strong id="quoteContext" class="accent">Consulta general</strong></p>
+    <form data-mailto="contacto@atlasdrones.com.ar">
+      <input type="hidden" name="asunto" id="quoteSubject" value="Consulta general">
+      <div class="field"><label for="qNombre">Nombre y empresa</label><input id="qNombre" name="nombre" required placeholder="Nombre, razón social"></div>
+      <div class="field"><label for="qContacto">Correo o teléfono</label><input id="qContacto" name="contacto" required placeholder="Para responderte"></div>
+      <div class="field"><label for="qProvincia">Provincia de operación</label><input id="qProvincia" name="provincia" placeholder="Neuquén, Córdoba, Salta..."></div>
+      <div class="field"><label for="qMensaje">Misión y alcance</label><textarea id="qMensaje" name="mensaje" rows="4" required placeholder="Qué necesitás relevar, superficie o kilómetros, fecha estimada"></textarea></div>
+      <button class="btn btn--block" type="submit">Enviar consulta</button>
+      <p class="formnote"></p>
+    </form>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/geo-argentina.js"></script>
+<script src="assets/app.js"></script>
+<script>
+/* Contenido de la portada generado desde el modelo de datos. */
+(function () {
+  var A = window.AERONEX;
+
+  /* mapa decorativo con recorrido por región */
+  var heroMap = document.getElementById('heroMap');
+  var svg = window.atlasDrawMap(heroMap, { cities: true, majorOnly: true });
+  if (svg) {
+    var ids = A.REGIONS.map(function (r) { return r.id; }), i = 0;
+    setInterval(function () {
+      var id = ids[i++ % ids.length];
+      Array.prototype.forEach.call(svg.querySelectorAll('g.region'), function (g) {
+        var on = g.getAttribute('data-region') === id;
+        Array.prototype.forEach.call(g.querySelectorAll('.prov'), function (p) { p.classList.toggle('lit', on); });
+      });
+    }, 2200);
+  }
+
+  /* tira de industrias, duplicada para que el desplazamiento sea continuo */
+  var nombres = A.INDUSTRIES.map(function (x) { return x.name; });
+  document.getElementById('ticker').innerHTML =
+    nombres.concat(nombres).map(function (n) { return '<span>' + n + '</span>'; }).join('');
+
+  /* tarjetas de región */
+  document.getElementById('regionCards').innerHTML = A.REGIONS.map(function (r) {
+    return '<a class="card reveal" href="argentina.html?region=' + r.id + '">' +
+      '<span class="card__num">' + r.name + '</span>' +
+      '<h3>' + r.primary + '</h3>' +
+      '<p>' + r.note + '</p>' +
+      '<div class="chips" style="margin-top:16px"><span class="chip chip--sol">' + r.landmark + '</span>' +
+      '<span class="chip">' + r.provinces.length + ' provincias</span></div>' +
+    '</a>';
+  }).join('');
+
+  /* industrias */
+  document.getElementById('industryGrid').innerHTML = A.INDUSTRIES.map(function (i) {
+    return '<a class="ind reveal" href="marketplace.html?industria=' + i.id + '">' +
+      '<strong>' + i.name + '</strong><span>' + i.hint + '</span></a>';
+  }).join('');
+
+  /* misiones */
+  document.getElementById('missionGrid').innerHTML = A.MISSIONS.map(function (m) {
+    var ind = A.industry(m.industry);
+    var p = m.profile;
+    var specs = [];
+    if (p.areaHa) specs.push(p.areaHa.toLocaleString('es-AR') + ' ha');
+    if (p.lineKm) specs.push(p.lineKm + ' km de traza');
+    specs.push('±' + p.accuracyCm + ' cm');
+    specs.push(A.ENV_LABEL[p.env]);
+    return '<a class="mission reveal" href="configurador.html?mision=' + m.id + '">' +
+      '<div class="mission__top"><h3>' + m.name + '</h3></div>' +
+      '<p class="mission__ex">' + m.example + '</p>' +
+      '<p class="mission__needs">' + m.needs + '</p>' +
+      '<div class="mission__specs"><span class="chip chip--ac">' + (ind ? ind.name : '') + '</span>' +
+      specs.map(function (s) { return '<span class="chip">' + s + '</span>'; }).join('') + '</div>' +
+    '</a>';
+  }).join('');
+
+  /* tipos de vendedor */
+  document.getElementById('sellerGrid').innerHTML = A.SELLER_TYPES.map(function (s) {
+    return '<article class="card reveal"><h3>' + s.label + '</h3><p>' + s.desc + '</p></article>';
+  }).join('');
+
+  /* mercados */
+  document.getElementById('latamGrid').innerHTML = A.MARKETS.map(function (m) {
+    var live = m.status === 'activo';
+    return '<div class="' + (live ? 'is-live' : '') + '"><b>' + m.name + '</b>' +
+      '<span>' + m.currency + ' · ' + m.status + '</span></div>';
+  }).join('');
+
+  window.atlasWatch(document);
+})();
+</script>
+</body>
+</html>
