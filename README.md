@@ -59,9 +59,12 @@ funciones `missionFit`, `operability`, `industrialValue` y `tco`.
 
 Tres marcadores hay que reemplazar por los valores reales:
 
-1. **Dominio.** Todo el sitio apunta a `https://atlasdrones.com.ar`. Aparece en
-   los cuatro HTML (canónica y etiquetas para compartir), en `sitemap.xml` y en
-   `robots.txt`. Si el dominio final es otro, hay que cambiarlo en esos lugares.
+1. **Dominio.** Por ahora el sitio vive en el dominio que da Vercel,
+   `https://atlas-drones.vercel.app`, y así figura en la canónica y en las
+   etiquetas para compartir de los cuatro HTML, en `sitemap.xml` y en
+   `robots.txt`. Cuando se conecte el dominio propio hay que reemplazarlo en
+   esos seis archivos, o las vistas previas y la indexación siguen apuntando al
+   subdominio viejo.
 2. **Correo de contacto.** `contacto@atlasdrones.com.ar` es un marcador y está en
    los cuatro archivos HTML más el 404.
 3. **Precios y especificaciones.** Son valores de referencia para dimensionar la
