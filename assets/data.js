@@ -325,6 +325,7 @@ window.AERONEX = (function () {
     },
     {
       id: 'm3e', brand: 'DJI', model: 'Mavic 3 Enterprise', category: 'Multirrotor liviano', tier: 'Mapeo liviano',
+      foto: 'mavic-3-frontal.jpg',
       precioUsd: 5200, enduranceMin: 45, rangeKm: 15, payloadKg: 0.1, ceilingM: 6000, windMs: 12, ip: 'IP43',
       sensors: ['rgb','zoom','rtk'], accuracyCm: 3, coverageHaHora: 200,
       industries: ['construccion','geoespacial','inmobiliario','gobierno','agro'],
@@ -335,6 +336,7 @@ window.AERONEX = (function () {
     },
     {
       id: 'm3t', brand: 'DJI', model: 'Mavic 3 Thermal', category: 'Multirrotor liviano', tier: 'Térmico liviano',
+      foto: 'mavic-3-optica.jpg',
       precioUsd: 6300, enduranceMin: 45, rangeKm: 15, payloadKg: 0.1, ceilingM: 6000, windMs: 12, ip: 'IP43',
       sensors: ['termico','zoom','rgb'], accuracyCm: 10, coverageHaHora: 150,
       industries: ['seguridad','inspeccion','ambiental','energia','ganaderia'],
@@ -405,6 +407,7 @@ window.AERONEX = (function () {
     },
     {
       id: 'p100pro', brand: 'XAG', model: 'P100 Pro', category: 'Multirrotor agrícola', tier: 'Aplicación',
+      foto: 'pulverizacion.jpg',
       precioUsd: 21000, enduranceMin: 15, rangeKm: 4, payloadKg: 50, ceilingM: 4000, windMs: 10, ip: 'IP67',
       sensors: ['pulverizacion','rgb','rtk'], accuracyCm: 10, coverageHaHora: 18,
       industries: ['agro','forestal'],

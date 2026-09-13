@@ -81,6 +81,12 @@ El sitio no depende de fotografía: funciona completo sin una sola foto.
   plataforma. Si una aeronave declara el campo `foto`, se usa esa imagen y la
   silueta queda de respaldo por si el archivo falla. Las condiciones que tiene
   que cumplir el archivo están en `img/LEEME.md`.
+- Hoy hay **tres fichas con foto y una banda** en el marketplace, recortadas de
+  material de referencia. Las tres fotos de producto son de la familia Mavic 3
+  y de un pulverizador genérico, así que **sirven de provisorio hasta que el
+  importador mande fotos del equipo exacto**: el Mavic 3 Pro del render no es
+  el mismo modelo que el Mavic 3 Enterprise de la ficha. Reemplazarlas es
+  cambiar el archivo en `img/` sin tocar nada más.
 - La **imagen para compartir** (`img/og.png`, 1200 × 630) se usa en WhatsApp,
   LinkedIn y Twitter. Se regenera a mano si cambian los números de la portada.
 

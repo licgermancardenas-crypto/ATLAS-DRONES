@@ -53,3 +53,17 @@ competencia. Tampoco archivos con marca de agua.
 Las escenas de las regiones no son fotos: son arte vectorial propio, generado en
 `assets/scenery.js`. No hace falta conseguir fotografía de paisaje argentino,
 y conviene no mezclar las dos cosas en la misma página.
+
+## Qué hay hoy en esta carpeta
+
+| Archivo | Dónde se usa | Estado |
+| --- | --- | --- |
+| `og.png` | Vista previa al compartir el sitio | Definitivo, generado del sistema visual |
+| `mavic-3-frontal.jpg` | Ficha del Mavic 3 Enterprise | Provisorio, el render es de un Mavic 3 Pro |
+| `mavic-3-optica.jpg` | Ficha del Mavic 3 Thermal | Provisorio, muestra óptica RGB, no el sensor térmico |
+| `pulverizacion.jpg` | Ficha del XAG P100 Pro | Provisorio, es un pulverizador genérico |
+| `despegue.jpg` | Banda del marketplace | Sirve como imagen de contexto |
+
+Las tres fichas de producto son aproximaciones de familia: el airframe es el
+correcto, el modelo exacto no. Para un sitio comercial conviene reemplazarlas
+por fotos del equipo que realmente se vende, pedidas al importador.
