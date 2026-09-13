@@ -32,7 +32,7 @@ assets/configurator.js   motor de recomendación
 styles.css               sistema visual completo
 img/                     fotografía de equipos, ver img/LEEME.md
 vercel.json              cabeceras, caché y política de seguridad del despliegue
-robots.txt               indexación
+sitemap.xml robots.txt   indexación
 ```
 
 Sitio estático puro. Sin compilación, sin dependencias, sin framework.
@@ -59,12 +59,12 @@ funciones `missionFit`, `operability`, `industrialValue` y `tco`.
 
 Tres marcadores hay que reemplazar por los valores reales:
 
-1. **Dominio.** El sitio todavía no tiene dominio confirmado, así que no hay
-   ninguna URL absoluta escrita en el código: la canónica es relativa y las
-   imágenes de compartido van por ruta. Cuando el dominio exista hay que
-   ponerlo en la canónica y en `og:image` de los cuatro HTML, volver a crear
-   `sitemap.xml` y agregar la línea `Sitemap:` en `robots.txt`. Sin dominio
-   absoluto, WhatsApp y LinkedIn pueden no mostrar la vista previa.
+1. **Dominio.** El sitio vive en el subdominio que da Vercel,
+   `https://atlas-drones-sepia.vercel.app`, y así figura en la canónica, en las
+   etiquetas para compartir y en los datos estructurados de los cuatro HTML,
+   más `sitemap.xml` y `robots.txt`. Al conectar un dominio propio hay que
+   reemplazarlo en esos seis archivos. Una canónica que apunta al subdominio
+   viejo le sigue atribuyendo el contenido a esa dirección.
 
 2. **Correo de contacto.** `contacto@atlasdrones.com.ar` es un marcador y está en
    los cuatro archivos HTML más el 404.

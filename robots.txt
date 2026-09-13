@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://atlas-drones-sepia.vercel.app/sitemap.xml
